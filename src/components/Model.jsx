@@ -134,7 +134,7 @@ const Model = () => {
           </div>
         ) : (
           <div className='flex flex-col items-center mt-5'>
-            <div className='w-full h-full overflow-hidden relative'>
+            <div className='max-w-10 h-full overflow-hidden'>
               <img src='/assets/images/image.png' alt='iphone' className='object-contain' />
             </div>
           </div>
