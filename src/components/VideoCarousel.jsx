@@ -61,12 +61,7 @@ export default function VideoCarousel() {
           if (progress != currentProgress) {
             currentProgress = progress;
             gsap.to(videoDivRef.current[videoId], {
-              width:
-                window.innerWidth < 760
-                  ? "10vw"
-                  : window.innerWidth < 1200
-                  ? "10vw"
-                  : "4vw",
+              width: window.innerWidth < 760 ? "10vw" : window.innerWidth < 1200 ? "10vw" : "4vw",
             });
             gsap.to(span[videoId], {
               width: `${currentProgress}%`,
@@ -90,8 +85,7 @@ export default function VideoCarousel() {
       }
       function animeUpdate() {
         anime.progress(
-          videoRef.current[videoId].currentTime /
-            hightlightsSlides[videoId].videoDuration
+          videoRef.current[videoId].currentTime / hightlightsSlides[videoId].videoDuration
         );
       }
       if (isPlaying) {
@@ -142,19 +136,17 @@ export default function VideoCarousel() {
   }
   return (
     <>
-      <div className="flex items-center">
+      <div className='flex items-center'>
         {hightlightsSlides.map((list, i) => (
-          <div key={list.id} id="slider" className="sm:pr-20 pr-10">
-            <div className="video-carousel_container">
-              <div className="w-full h-full flex-center rounded-3xl overflow-hidden bg-black">
+          <div key={list.id} id='slider' className='sm:pr-20 pr-10'>
+            <div className='video-carousel_container'>
+              <div className='w-full h-full flex-center rounded-3xl overflow-hidden bg-black'>
                 <video
-                  className={`${
-                    list.id === 2 && "translate-x-44"
-                  } pointer-events-none`}
+                  className={`${list.id === 2 && "translate-x-44"} pointer-events-none`}
                   muted
                   playsInline={true}
-                  id="video"
-                  preload="auto"
+                  id='video'
+                  preload='auto'
                   ref={(e) => {
                     videoRef.current[i] = e;
                   }}
@@ -166,17 +158,14 @@ export default function VideoCarousel() {
                   }}
                   onLoadedMetadata={(e) => handleLoadedData(i, e)}
                   onEnded={() => {
-                    i !== 3
-                      ? handleProcess("video-end", i)
-                      : handleProcess("video-last");
-                  }}
-                >
-                  <source src={list.video} type="video/mp4" />
+                    i !== 3 ? handleProcess("video-end", i) : handleProcess("video-last");
+                  }}>
+                  <source src={list.video} type='video/mp4' />
                 </video>
               </div>
-              <div className="absolute top-12 left-[5%] z-10">
+              <div className='absolute top-12 left-[5%] z-10'>
                 {list.textLists.map((text) => (
-                  <p key={text} className="md:text-2xl text-xl font-medium">
+                  <p key={text} className='md:text-2xl text-xl font-medium'>
                     {text}
                   </p>
                 ))}
@@ -185,22 +174,21 @@ export default function VideoCarousel() {
           </div>
         ))}
       </div>
-      <div className="relative flex-center mt-10">
-        <div className="flex-center py-5 px-7 bg-gray-300 backdrop-blur rounded-full">
+      <div className='relative flex-center mt-10'>
+        <div className='flex-center py-5 px-7 bg-gray-300 backdrop-blur rounded-full'>
           {videoRef.current.map((_, i) => (
             <span
               key={i}
               ref={(e) => (videoDivRef.current[i] = e)}
-              className="mx-2 w-3 h-3 bg-gray-200 rounded-full relative cursor-pointer"
-            >
+              className='mx-2 w-3 h-3 bg-gray-200 rounded-full relative cursor-pointer'>
               <span
-                className="absolute h-full w-full rounded-full"
+                className='absolute h-full w-full rounded-full'
                 ref={(e) => (videoSpanRef.current[i] = e)}
               />
             </span>
           ))}
         </div>
-        <button className="control-btn">
+        <button className='control-btn'>
           <img
             src={isLastVideo ? replayImg : !isPlaying ? playImg : pauseImg}
             alt={isLastVideo ? "replay" : !isPlaying ? "play" : "pause"}

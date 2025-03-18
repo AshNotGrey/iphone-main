@@ -7,7 +7,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    overflow-x: hidden;
 }
 
 body
@@ -32,6 +31,7 @@ canvas
     margin-inline-end: auto;
     position: relative;
     max-width: 1120px;
+    overflow-x: hidden;
 }
 
 /* For Webkit browsers like Chrome, Safari, and Opera */
