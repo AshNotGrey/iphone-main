@@ -7,36 +7,22 @@ import { ScrollTrigger } from "gsap/all";
 gsap.registerPlugin(ScrollTrigger);
 const Features = () => {
   useGSAP(() => {
-    animateWithGsap("#features_title", {
-      y: 0,
-      opacity: 1,
-    });
     gsap.to("#exploreVideo", {
       scrollTrigger: {
         trigger: "#exploreVideo",
         toggleActions: "play pause reverse restart",
-        start: "top 80%",
+        start: "-10% bottom",
       },
       onComplete: () => {
         videoRef.current.play();
       },
     });
-    animateWithGsap(
-      ".g_grow",
-      {
-        scale: 1,
-        ease: "power1",
-        opacity: 1,
-      },
-      { scrub: 5.5 }
-    );
-    animateWithGsap(".g_text", {
-      y: 0,
-      opacity: 1,
-      ease: "power2.inOut",
-      duration: 1,
-    });
+
+    animateWithGsap("#features_title", { y: 0, opacity: 1 });
+    animateWithGsap(".g_grow", { scale: 1, opacity: 1, ease: "power1" }, { scrub: 5.5 });
+    animateWithGsap(".g_text", { y: 0, opacity: 1, ease: "power2.inOut", duration: 1 });
   }, []);
+
   const videoRef = useRef();
   return (
     <section className='h-full common-padding bg-zinc relative overflow-hidden'>

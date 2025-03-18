@@ -8,20 +8,20 @@ gsap.registerPlugin(ScrollTrigger);
 const HowItWorks = () => {
   useGSAP(() => {
     gsap.from("#chip", {
-      opacity: 0,
-      scale: 3,
-      duration: 2,
-      scrub: 5.5,
-      ease: "power2.inOut",
       scrollTrigger: {
         trigger: "#chip",
-        start: "bottom 80%", // when the top of the trigger hits the bottom of the viewport
+        start: "20% bottom",
       },
+      opacity: 0,
+      scale: 2,
+      duration: 2,
+      ease: "power2.inOut",
     });
+
     animateWithGsap(".g_fadeIn", {
       opacity: 1,
       y: 0,
-      duration: 2,
+      duration: 1,
       ease: "power2.inOut",
     });
   }, []);
