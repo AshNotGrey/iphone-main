@@ -52,8 +52,6 @@ const Model = () => {
   useGSAP(() => {
     gsap.to("#heading", { y: 0, opacity: 1 });
   }, []);
-  const isSmall = useMediaQuery({ query: "(max-width: 440px)" });
-  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
   const isTablet = useMediaQuery({ query: "(max-width: 1024px)" });
   return (
     <section className='common-padding'>
