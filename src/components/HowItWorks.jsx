@@ -15,7 +15,7 @@ const HowItWorks = () => {
       ease: "power2.inOut",
       scrollTrigger: {
         trigger: "#chip",
-        start: "20% bottom",
+        start: "top 50%",
       },
     });
     animateWithGsap(".g_fadeIn", {
@@ -28,7 +28,7 @@ const HowItWorks = () => {
   const videoRef = useRef();
   return (
     <section className='common-padding'>
-      <div className='screen-max-width'>
+      <div className='screen-max-width overflow-clip'>
         <div id='chip' className='flex-center w-full my-20'>
           <img src={chipImg} alt='chip' width={180} height={180} />
         </div>
