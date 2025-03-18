@@ -15,7 +15,7 @@ const HowItWorks = () => {
       ease: "power2.inOut",
       scrollTrigger: {
         trigger: "#chip",
-        start: "top 50%",
+        start: "bottom 80%", // when the top of the trigger hits the bottom of the viewport
       },
     });
     animateWithGsap(".g_fadeIn", {
