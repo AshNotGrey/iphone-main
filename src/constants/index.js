@@ -85,3 +85,4 @@ export const footerLinks = [
     "Legal",
     "Site Map",
 ];
+export const HakiAttribution = { text: 'Powered by', link: 'https://linktr.ee/HakiCorporation', logo: '/assets/images/HAKI-logo-svg.svg' };
