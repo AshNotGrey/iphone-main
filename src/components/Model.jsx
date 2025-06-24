@@ -59,7 +59,7 @@ const Model = () => {
         <h1 id='heading' className='section-heading'>
           Take a closer look.
           <br />
-          From d' Haki perspective
+          From d' Haki perspective...better on a large screen.
         </h1>
         {!isTablet ? (
           <div className='flex flex-col items-center mt-5'>
